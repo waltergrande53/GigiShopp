@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import Image from 'next/image'
+import Review from '../../reviews/reviews'
 
 const client = createClient({
     space:process.env.SPACE_ID,
@@ -36,6 +37,9 @@ export const getStaticProps = async ({ params }) => {
     revalidate: 1
   }
 }
+const addReviews=()=>{
+  
+}
 export default function ProductCard ({product}){
   const {title,price,images,id,size,slug}= product.fields
     return(
@@ -71,16 +75,7 @@ export default function ProductCard ({product}){
       <h5><span>1</span> review for <span>{title}</span></h5>
       <div class="media mt-3 mb-4">
    
-        <div class="media-body">
-          <div class="d-sm-flex justify-content-between">
-            <p class="mt-1 mb-2">
-              <strong>yoo </strong>
-              <span>– </span><span>hoy</span>
-            </p>
-
-          <p class="mb-0">hi</p>
-        </div>
-      </div>
+    <Review/>
  
       <h5 class="mt-4">Add a review</h5>
       <p>Your email address will not be published.</p>
