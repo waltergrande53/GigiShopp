@@ -19,7 +19,7 @@ import productStyles from '/styles/Products.module.css'
      }
     }
 export default function Home ({products}){
-  console.log(products)
+
 
  return (
     <>
